@@ -12,7 +12,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Uses [Better Errors](https://github.com/charliesome/better_errors) for debugging. ✔
 * Uses [Guard](https://github.com/guard/guard) to run tests continuously.
 * Uses [FactoryBot](https://github.com/thoughtbot/factory_bot) in place of fixtures.
-* Uses [Materialize CSS](http://materializecss.com) as the CSS Framework.
+* Uses [Materialize CSS](http://materializecss.com) as the CSS Framework. ✔
 * Uses [Simple Form](https://github.com/plataformatec/simple_form) to make forms simpler.
 
 ### Specifications

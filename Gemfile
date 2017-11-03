@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Materialize CSS
+gem 'materialize-sass'
+
 group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
   gem "better_errors"
