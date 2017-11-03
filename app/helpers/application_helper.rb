@@ -2,9 +2,9 @@ module ApplicationHelper
 
   def full_title(page_title = "")
     if page_title == ""
-      "Odinbook"
+      "odinbook"
     else
-      "#{page_title} | Odinbook"
+      "#{page_title} | odinbook"
     end
   end
 end
