@@ -9,7 +9,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 ### Requirements
 
 ### Gems
-* Uses [Better Errors](https://github.com/charliesome/better_errors) for debugging.
+* Uses [Better Errors](https://github.com/charliesome/better_errors) for debugging. ✔
 * Uses [Guard](https://github.com/guard/guard) to run tests continuously.
 * Uses [FactoryBot](https://github.com/thoughtbot/factory_bot) in place of fixtures.
 * Uses [Materialize CSS](http://materializecss.com) as the CSS Framework.
