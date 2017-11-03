@@ -1,24 +1,15 @@
-# README
+# Odinbook Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this project is to implement Facebook -- without chat and AJAX -- in Rails.
 
-Things you may want to cover:
+This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project).
 
-* Ruby version
+[Future Screenshot]
 
-* System dependencies
+## Pre-Project Thoughts
 
-* Configuration
+...
 
-* Database creation
+## Post-Project Thoughts
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+...
