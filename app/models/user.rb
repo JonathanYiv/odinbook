@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :requesting_friendships, -> { where accepted: true },
                                     class_name: 'Friendship',
-                                    foreign_key: 'requester_id',
+                                    foreign_key: 'requested_id',
                                     dependent: :destroy
 
   has_many :requested_friends, through: :requested_friendships,
@@ -26,4 +26,9 @@ class User < ApplicationRecord
   has_many :friendship_requests, class_name: 'Friendship',
                                  foreign_key: 'requested_id',
                                  dependent: :destroy
+
+  # Method to combine requested and requesting friends for all friends.
+  def friends
+    requested_friends + requesting_friends
+  end
 end
