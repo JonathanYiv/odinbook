@@ -27,6 +27,12 @@ class User < ApplicationRecord
                                  foreign_key: 'requested_id',
                                  dependent: :destroy
 
+  # Validations
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 7, maximum: 40 }
+
   # Method to combine requested and requesting friends for all friends.
   def friends
     requested_friends + requesting_friends
