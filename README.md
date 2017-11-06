@@ -50,11 +50,11 @@ User:
     password: string
     email: string
     bio: text
-    birthday: datetime
+    birthday: date
     
 Post: 
     user_id: references
-    body: text
+    content: text
     image_data: text
 
 Friendship: 
