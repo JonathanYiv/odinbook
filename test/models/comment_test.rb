@@ -36,8 +36,13 @@ class CommentTest < ActiveSupport::TestCase
     assert_not @comment.valid?
   end
 
-  # Test dependent destruction and associations
-  test "dependent destruction and associations" do
-    skip("Incomplete")
+  # Test Comment/Like dependent destruction
+  test "destroying comment destroys associated likes" do
+    @comment.save
+    create(:like, likeable: @comment)
+    assert_equal Like.count, 1
+    assert_difference 'Like.count', -1 do
+      @comment.destroy
+    end
   end
 end

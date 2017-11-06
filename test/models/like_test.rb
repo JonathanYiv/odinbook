@@ -7,19 +7,26 @@ class LikeTest < ActiveSupport::TestCase
       user
       association :likeable, factory: :post
     end
+
+    factory :post_like, class: Like do
+      user
+      association :likeable, factory: :post
+    end
+
+    factory :comment_like, class: Like do
+      user
+      association :likeable, factory: :comment
+    end
   end
 
   def setup
-    @like = build(:like)
+    @post_like = build(:post_like)
+    @comment_like = build(:comment_like)
   end
 
   # Default Like is valid
   test "like should be valid" do
-    assert @like.valid?
-  end
-
-  # Test dependent destruction and associations
-  test "dependent destruction and associations" do
-    skip("Incomplete")
+    assert @post_like.valid?
+    assert @comment_like.valid?
   end
 end

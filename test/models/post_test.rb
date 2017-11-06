@@ -35,8 +35,22 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
 
-  # Test dependent destruction and associations
-  test "dependent destruction and associations" do
-    skip("Incomplete")
+  # Test Post/Like and Post/Comment dependent destruction
+  test "destroying post destroys associated likes" do
+    @post.save
+    create(:like, likeable: @post)
+    assert_equal Like.count, 1
+    assert_difference 'Like.count', -1 do
+      @post.destroy
+    end
+  end
+
+  test "destroying post destroys associated comments" do
+    @post.save
+    create(:comment, post: @post)
+    assert_equal Comment.count, 1
+    assert_difference 'Comment.count', -1 do
+      @post.destroy
+    end
   end
 end

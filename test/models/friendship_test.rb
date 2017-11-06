@@ -17,9 +17,4 @@ class FriendshipTest < ActiveSupport::TestCase
   test "friendship should be valid" do
     assert @friendship.valid?
   end
-
-  # Test dependent destruction and associations
-  test "dependent destruction and associations" do
-    skip("Incomplete")
-  end
 end
