@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Materialize CSS
 gem 'materialize-sass'
+gem 'webpacker', '~> 3.0'
 
 group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
