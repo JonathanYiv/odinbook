@@ -1,7 +1,25 @@
 require 'test_helper'
 
 class FriendshipTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  # Setup Factories and Default Friendship
+  FactoryBot.define do
+    factory :friendship do
+      association :requester, factory: :user
+      association :requested, factory: :user
+    end
+  end
+
+  def setup
+    @friendship = build(:friendship)
+  end
+
+  # Default Friendship is valid
+  test "friendship should be valid" do
+    assert @friendship.valid?
+  end
+
+  # Test dependent destruction and associations
+  test "dependent destruction and associations" do
+    skip("Incomplete")
+  end
 end

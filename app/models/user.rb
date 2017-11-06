@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # Filters
+  before_save :downcase_email
+
   # Associations
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -37,4 +40,11 @@ class User < ApplicationRecord
   def friends
     requested_friends + requesting_friends
   end
+
+  private
+
+    # Converts email to all lower-case
+    def downcase_email
+      email.downcase!
+    end
 end
