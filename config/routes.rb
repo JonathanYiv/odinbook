@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   
   get '/contact', to: 'static_pages#contact'
   get '/about',   to: 'static_pages#about'
+
+  resources :posts, only: [:create, :destroy]
 end
