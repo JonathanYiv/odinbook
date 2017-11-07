@@ -37,12 +37,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem 'webpacker', '~> 3.0'
 
-group :development do
-  # Use the Better Errors gem to enhance the standard Rails error page
-  gem "better_errors"
-  gem "binding_of_caller"
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -59,6 +53,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Use the Better Errors gem to enhance the standard Rails error page
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+group :test do
+  gem 'guard'
+  gem 'guard-minitest'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
