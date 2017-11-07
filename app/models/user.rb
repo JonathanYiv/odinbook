@@ -48,6 +48,11 @@ class User < ApplicationRecord
     requested_friends + requesting_friends
   end
 
+  # Method that combines first and last name
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
     # Converts email to all lower-case

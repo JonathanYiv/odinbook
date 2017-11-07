@@ -1,0 +1,17 @@
+<div class="card small left-align">
+	<%= form_for(:post, url: posts_path) do |f| %>
+		<div class="card-content">
+			<i class="material-icons">create</i>
+			<span>Make Post</span>
+			<div class="divider"></div>
+			<div class="input-field">
+				<%= f.text_area :content, placeholder: "What's on your mind, #{current_user.first_name}?", class: "materialize-textarea" %>
+			</div>
+		</div>
+		<div class="card-content">
+			<ul class="right">
+	  			<li><%= f.submit "Post", class: "btn facebook-blue white-text" %></li>
+	  		</ul>
+	  	</div>
+	<% end %>
+</div>
