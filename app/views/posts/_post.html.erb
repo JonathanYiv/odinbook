@@ -11,8 +11,22 @@
 
 	</div>
 	<div class="card-action">
-		<i class="material-icons">thumb_up</i>Like
+		<% if post.likes.pluck(:user_id).include?(current_user.id) %>
+			<%= link_to like_path(post.likes.where(user_id: current_user.id).first.id), method: :delete do %>
+				<i class="material-icons facebook-blue-text">thumb_up</i><span class="facebook-blue-text">Like</span>
+			<% end %>
+		<% else %>
+			<%= link_to likes_path(user_id: current_user.id, post_id: post.id), method: :post do %>
+				<i class="material-icons grey-text">thumb_up</i><span class="grey-text">Like</span>
+			<% end %>
+		<% end %>
 	</div>
+	<% if post.likes.exists? %>
+		<div class="card-content facebook-grey">
+			<i class="material-icons facebook-blue-text tiny">thumb_up</i>
+			<span class="facebook-blue-text"><%= post.likes.count %></span>
+		</div>
+	<% end %>
 	<div class="card-content facebook-grey">
 		[Comment]
 	</div>
