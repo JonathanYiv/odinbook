@@ -1,6 +1,8 @@
 <%= render 'layouts/logout/header' %>
 
-<!-- Need to add Flash -->
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 
 <main class="facebook-grey">
   	<div class="center-align container">
