@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  # Default Scope
+  default_scope { order(created_at: :desc) }
+
   # Associations
   belongs_to :user
   has_many :likes, as: :likeable, dependent: :destroy

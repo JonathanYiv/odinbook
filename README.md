@@ -31,7 +31,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Users can like Posts.
 * Users can comment on Posts.
 * Posts display with content, author, comments, and likes.
-* Logged in home page will have the 'Newsfeed.'
+* Logged in home page will have the 'Newsfeed.' ✔
 * User's Show page has a Profile Page with a Profile Picture.
 * User Index page lists all users and Friend Request buttons.
 
@@ -110,21 +110,20 @@ Friendships ✔
     
 ### Controllers
 ```ruby
-StaticPages
+StaticPages ✔
     home: The login/signup page, automatically redirected to if not logged in
-          If logged in, it is a timeline of all yours and your friend's posts
+          If logged in, it is a timeline of all yours and your friend's posts ✔
 
 User
     index: Show the list of all users
     show: Show the user's profile page
-    create: Creates a new user from the Homepage
     edit: profile updating page
     update: Update user's details
     destroy: Delete a user
 
-Post
-    create: creates a new post
-    delete: deletes a post
+Post ✔
+    create: creates a new post ✔
+    delete: deletes a post ✔
 
 Comment
     create: creates a new comment

@@ -1,7 +1,14 @@
 <div class="card left-align">
 	<div class="card-content">
+		<% if current_user == post.user %>
+			<ul class="right">
+				<li class="blue-text"><%= link_to "Delete", post, method: :delete, 
+										  data: { confirm: "Are you sure?" } %></li>
+			</ul>	
+		<% end %>
 		<span class="card-title grey-text"><%= post.user.full_name %> shared a post</span>
-		<p><%= post.content %></p>	
+		<p><%= post.content %></p>
+
 	</div>
 	<div class="card-action">
 		<i class="material-icons">thumb_up</i>Like

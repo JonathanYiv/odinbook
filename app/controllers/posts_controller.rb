@@ -11,6 +11,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      flash[:warning] = "You are not allowed to delete other people's posts."
+    else
+      @post.destroy
+      flash[:success] = "Your post has been deleted."
+    end
+    redirect_to root_path
   end
 
   private
