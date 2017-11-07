@@ -31,7 +31,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Users can like Posts.
 * Users can comment on Posts.
 * Posts display with content, author, comments, and likes.
-* Post's Index page will be the 'Timeline' feature.
+* Logged in home page will have the 'Newsfeed.'
 * User's Show page has a Profile Page with a Profile Picture.
 * User Index page lists all users and Friend Request buttons.
 

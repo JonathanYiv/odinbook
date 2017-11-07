@@ -1,0 +1,60 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li>Create Page</li>
+  <li class="divider"></li>
+  <li>Create Group</li>
+  <li>Your Groups</li>
+  <li class="divider"></li>
+  <li>Create Fundraiser</li>
+  <li class="divider"></li>
+  <li>Create Ads</li>
+  <li>Advertising on Odinbook</li>
+  <li class="divider"></li>
+  <li>Activity Log</li>
+  <li>News Feed Preferences</li>
+  <li>Settings</li>
+  <li class="divider"></li>
+  <li>Send Money</li>
+  <li>Payment History</li>
+  <li class="divider"></li>
+  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+</ul>
+
+<nav class="facebook-blue">
+  <div class="nav-wrapper container"> 
+      <ul class="left">
+        <li>
+          <div class="row">
+            <a href="/" class="brand-logo">o</a>
+          </div>
+        </li>     
+        <li>    
+            <div class="center row">
+              <div class="col s12" >
+                <div class="row">
+                  <div class="input-field col s6 s12">
+                    <i class="material-icons prefix">search</i>
+                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete">
+                  </div>
+              </div>
+            </div>
+          </div>          
+        </li>
+      </ul>
+      <ul class="right">
+        <li><i class="material-icons">face</i></li>                  
+        <li><%= link_to current_user.first_name, '#' %></li>
+        <li><%= link_to "Home", '#' %></li>
+        <li><%= link_to "Find Friends", '#' %></li>
+        <li><i class="material-icons">people</i></li>
+        <li><i class="material-icons">message</i></li>
+        <li><i class="material-icons">notifications</i></li>
+        <li class="grey-text">|</li>
+        <li><i class="material-icons">help</i></li>
+        <li>
+          <a class="dropdown-button" href="#!" data-activates="dropdown1">
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+  </div>
+</nav> 

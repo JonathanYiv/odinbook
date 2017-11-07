@@ -1,24 +1,5 @@
-<% provide(:title, "Log In or Sign Up") %>
-
-<div class="left-align">
-	<div class="row">
-		<div class="col s6">
-			<br><br>
-			<h5>Connect with friends and the world around you on Odinbook.</h5>
-		</div>
-		<div class="col s6">
-			<h3>Create a New Account</h3>
-			<p>It's free and always will be.</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s6">
-			<p><i class="material-icons">chrome_reader_mode</i> <b>See photos and updates</b> from friends in News Feed.</p>
-			<p><i class="material-icons">accessibility</i> <b>Share what's new in your life</b> on your Timeline.</p>
-			<p><i class="material-icons">important_devices</i> <b>Find more</b> of what you're looking for with Facebook Search.</p>
-		</div>
-		<div class="col s6">
-			<%= render 'devise/registrations/new' %>
-		</div>
-	</div>
-</div>
+<% if user_signed_in? %>
+	<%= render 'login_home' %>
+<% else %>
+	<%= render 'logout_home' %>
+<% end %>
