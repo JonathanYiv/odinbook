@@ -10,13 +10,13 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 
 ### Gems
 * Uses [Better Errors](https://github.com/charliesome/better_errors) for debugging. ✔
-* Uses [Guard](https://github.com/guard/guard) to run tests continuously.
-* Uses [FactoryBot](https://github.com/thoughtbot/factory_bot) in place of fixtures.
+* Uses [Guard](https://github.com/guard/guard) to run tests continuously. [X](https://bountify.co/rspec-tests-fail-in-guard-but-manually-running-rspec-test-passes-why)[X](https://stackoverflow.com/questions/24078768/argumenterror-factory-not-registered)
+* Uses [FactoryBot](https://github.com/thoughtbot/factory_bot) in place of fixtures. ✔
 * Uses [Materialize CSS](http://materializecss.com) as the CSS Framework. ✔
 * Uses [Simple Form](https://github.com/plataformatec/simple_form) to make forms simpler.
 
 ### Specifications
-* Full test coverage with MiniTest.
+* Full test coverage with MiniTest. (✔)
 * Uses PostgreSQL. ✔
 * Deployed on Heroku. ✔
 * Uses [Devise](https://github.com/plataformatec/devise) for authentication.
