@@ -40,6 +40,8 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 7, maximum: 40 }
+  validates :first_name, presence: true, length: { minimum: 2, maximum: 40 }
+  validates :last_name, presence: true, length: { minimum: 2, maximum: 40 }
 
   # Method to combine requested and requesting friends for all friends.
   def friends

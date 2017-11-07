@@ -9,6 +9,8 @@ class UserTest < ActiveSupport::TestCase
 
     factory :user do
       email { generate(:email) }
+      first_name "Jonathan"
+      last_name "Yiv"
       password "password"
     end
   end
@@ -33,6 +35,16 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "first name must be present" do
+    @user.first_name = nil
+    assert_not @user.valid?
+  end
+
+  test "last name must be present" do
+    @user.last_name = nil
+    assert_not @user.valid?
+  end
+
   # Tests length validation
   test "password should not be too short" do
     @user.password = "a"
@@ -41,6 +53,26 @@ class UserTest < ActiveSupport::TestCase
 
   test "password should not be too long" do
     @user.password = "a" * 41
+    assert_not @user.valid?
+  end
+
+  test "first name should not be too short" do
+    @user.first_name = "a"
+    assert_not @user.valid?
+  end
+
+  test "first name should not be too long" do
+    @user.first_name = "a" * 41
+    assert_not @user.valid?
+  end
+
+  test "last name should not be too short" do
+    @user.last_name = "a"
+    assert_not @user.valid?
+  end
+
+  test "last name should not be too long" do
+    @user.last_name = "a" * 41
     assert_not @user.valid?
   end
 
