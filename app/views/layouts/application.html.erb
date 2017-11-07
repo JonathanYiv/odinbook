@@ -11,14 +11,20 @@
   </head>
 
   <body>
-  	<%= render 'layouts/header' %>
+    <% if user_signed_in? %>
+      <p>Signed in.</p>
+    <% else %>
+  	  <%= render 'layouts/header' %>
 
-  	<main class="facebook-grey">
-	  	<div class="center-align container">
-	    	<%= yield %>
-	    </div>
-	</main>
+      <!-- Need to add Flash -->
 
-    <%= render 'layouts/footer' %>
+    	<main class="facebook-grey">
+  	  	<div class="center-align container">
+  	    	<%= yield %>
+  	    </div>
+  	  </main>
+
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
