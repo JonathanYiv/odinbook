@@ -31,10 +31,12 @@
             <div class="center row">
               <div class="col s12" >
                 <div class="row">
-                  <div class="input-field col s6 s12">
-                    <i class="material-icons prefix">search</i>
-                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete">
-                  </div>
+                  <form action="/users">
+                    <div class="input-field col s6 s12">
+                      <i class="material-icons prefix">search</i>
+                      <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete">
+                    </div>
+                  </form>
               </div>
             </div>
           </div>          
@@ -43,8 +45,8 @@
       <ul class="right">
         <li><i class="material-icons">face</i></li>                  
         <li><%= link_to current_user.first_name, '#' %></li>
-        <li><%= link_to "Home", '#' %></li>
-        <li><%= link_to "Find Friends", '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Find Friends", users_path %></li>
         <li><i class="material-icons">people</i></li>
         <li><i class="material-icons">message</i></li>
         <li><i class="material-icons">notifications</i></li>
