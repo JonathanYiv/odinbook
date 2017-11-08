@@ -6,7 +6,25 @@
 									  data: { confirm: "Are you sure?" } %></li>
 		</ul>	
 	<% end %>
-	<i class="material-icons">face</i>
 	<span class="facebook-blue-text"><b><%= comment.user.full_name %></b></span>
 	<%= comment.content %>
+	<br>
+	<% if comment.likes.pluck(:user_id).include?(current_user.id) %>
+		<%= link_to like_path(comment.likes.where(user_id: current_user.id).first.id), method: :delete do %>
+			<span class="facebook-blue-text">Like</span>
+		<% end %> 
+	<% else %>
+		<%= link_to likes_path(user_id: current_user.id, comment_id: comment.id), method: :post do %>
+			<span class="grey-text">Like</span>
+		<% end %>
+	<% end %>
+	<% if comment.likes.exists? %>
+		<span class="grey-text">
+			 · <i class="material-icons facebook-blue-text tiny">thumb_up</i>
+			<%= comment.likes.count %>
+		</span>
+	<% end %>
+	<span class="grey-text">
+		 · <%= time_ago_in_words(comment.created_at) %>
+	</span>
 </div>

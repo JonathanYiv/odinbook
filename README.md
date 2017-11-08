@@ -30,8 +30,8 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Users can create text or image Posts and upload profile pictures (using [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)).
 * Users can like Posts. ✔
 * Users can comment on Posts. ✔
-* Posts display with content, author, time, comments, and likes.
-* Comments display with content, author, time, and likes.
+* Posts display with content, author, time, comments, and likes. ✔
+* Comments display with content, author, time, and likes. ✔
 * Logged in home page will have the 'Newsfeed.' ✔
 * User's Show page has a Profile Page with a Profile Picture.
 * User Index page lists all users and Friend Request buttons.
@@ -130,9 +130,9 @@ Comment ✔
     create: creates a new comment ✔
     delete: deletes a comment ✔
 
-Like
-    create: creates a new like
-    destroy: deletes a like
+Like ✔
+    create: creates a new like ✔
+    destroy: deletes a like ✔
 
 Friendship
     index: Shows your current friend requests.

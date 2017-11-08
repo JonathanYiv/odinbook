@@ -7,6 +7,8 @@
 			</ul>	
 		<% end %>
 		<span class="card-title grey-text"><%= post.user.full_name %> shared a post</span>
+		<p class="grey-text"><%= time_ago_in_words(post.created_at) %></p>
+		<br>
 		<p><%= post.content %></p>
 
 	</div>

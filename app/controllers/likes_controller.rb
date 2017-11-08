@@ -2,7 +2,11 @@ class LikesController < ApplicationController
   def create
     @like = Like.new
     @like.user = User.find(params[:user_id])
-    @like.likeable = Post.find(params[:post_id])
+    if params[:post_id]
+      @like.likeable = Post.find(params[:post_id])
+    else
+      @like.likeable = Comment.find(params[:comment_id])
+    end
     @like.save
     redirect_to root_path
   end
