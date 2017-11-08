@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  before_action :logged_in_user
+
   def create
     @like = Like.new
     @like.user = User.find(params[:user_id])
