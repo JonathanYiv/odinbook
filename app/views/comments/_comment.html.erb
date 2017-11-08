@@ -1,0 +1,12 @@
+<div class="divider"></div>
+<div class="card-content facebook-grey">
+	<% if current_user == comment.user %>
+		<ul class="right">
+			<li class="blue-text"><%= link_to "X", comment, method: :delete, 
+									  data: { confirm: "Are you sure?" } %></li>
+		</ul>	
+	<% end %>
+	<i class="material-icons">face</i>
+	<span class="facebook-blue-text"><b><%= comment.user.full_name %></b></span>
+	<%= comment.content %>
+</div>

@@ -1,0 +1,9 @@
+<div class="divider"></div>
+<div class="card-content facebook-grey">
+	<%= form_for(:comment, url: comments_path) do |f| %>
+		<%= f.hidden_field :post_id, value: post_id %>
+		<div class="input-field">
+			<%= f.text_field :content, placeholder: "    Write a comment...", class: "white", style: "border-radius: 25px;" %>
+		</div>
+	<% end %>
+</div>

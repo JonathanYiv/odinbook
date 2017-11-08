@@ -15,7 +15,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Uses [Materialize CSS](http://materializecss.com) as the CSS Framework. ✔
 
 ### Specifications
-* Full test coverage with MiniTest. (✔)
+* Full test coverage with MiniTest.
 * Uses PostgreSQL. ✔
 * Deployed on Heroku. ✔
 * Uses [Devise](https://github.com/plataformatec/devise) for authentication. ✔
@@ -28,9 +28,10 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Users become friends when a Friend Request is accepted.
 * The Friend Request shows up as a notification in the navbar.
 * Users can create text or image Posts and upload profile pictures (using [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)).
-* Users can like Posts.
-* Users can comment on Posts.
-* Posts display with content, author, comments, and likes.
+* Users can like Posts. ✔
+* Users can comment on Posts. ✔
+* Posts display with content, author, time, comments, and likes.
+* Comments display with content, author, time, and likes.
 * Logged in home page will have the 'Newsfeed.' ✔
 * User's Show page has a Profile Page with a Profile Picture.
 * User Index page lists all users and Friend Request buttons.
@@ -111,8 +112,8 @@ Friendships ✔
 ### Controllers
 ```ruby
 StaticPages ✔
-    home: The login/signup page, automatically redirected to if not logged in
-          If logged in, it is a timeline of all yours and your friend's posts ✔
+    home: The login/signup page, automatically redirected to if not logged in ✔
+          If logged in, it is a timeline of all yours and your friend's posts
 
 User
     index: Show the list of all users
@@ -125,9 +126,9 @@ Post ✔
     create: creates a new post ✔
     delete: deletes a post ✔
 
-Comment
-    create: creates a new comment
-    delete: deletes a comment
+Comment ✔
+    create: creates a new comment ✔
+    delete: deletes a comment ✔
 
 Like
     create: creates a new like

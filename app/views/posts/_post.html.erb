@@ -27,7 +27,7 @@
 			<span class="facebook-blue-text"><%= post.likes.count %></span>
 		</div>
 	<% end %>
-	<div class="card-content facebook-grey">
-		[Comment]
-	</div>
+	<div class="divider"></div>
+	<%= render post.comments %>
+	<%= render partial: 'comments/form', locals: { post_id: post.id } %>
 </div>
