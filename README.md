@@ -25,8 +25,8 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 
 ### Features
 * Users can send Friend Requests to other Users. ✔
-* Users become friends when a Friend Request is accepted.
-* The Friend Request shows up as a notification in the navbar.
+* Users become friends when a Friend Request is accepted. ✔
+* The Friend Request shows up as a notification in the navbar. ✔
 * Users can create text or image Posts and upload profile pictures (using [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)).
 * Users can like Posts. ✔
 * Users can comment on Posts. ✔
@@ -113,7 +113,7 @@ Friendships ✔
 ```ruby
 StaticPages ✔
     home: The login/signup page, automatically redirected to if not logged in ✔
-          If logged in, it is a timeline of all yours and your friend's posts
+          If logged in, it is a timeline of all yours and your friend's posts ✔
 
 User
     index: Show the list of all users ✔
@@ -134,8 +134,8 @@ Like ✔
     create: creates a new like ✔
     destroy: deletes a like ✔
 
-Friendship
-    index: Shows your current friend requests.
+Friendship ✔
+    index: Shows your current friend requests. ✔
     create: Creates a new friend requested ✔
     delete: Deletes an existing friend request or friendship ✔
 ```

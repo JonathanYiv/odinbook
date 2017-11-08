@@ -1,0 +1,13 @@
+<div class="row">
+	<%= render 'static_pages/left_sidebar' %>
+	<div class="col s7">
+		<% unless current_user.requests.empty? %>
+			<ul class="collection">
+				<%= render current_user.requests %>
+			</ul>
+		<% else %>
+			<p>You currently have no pending friend requests.</p>
+		<% end %>
+	</div>
+	<%= render 'static_pages/right_sidebar' %>
+</div>

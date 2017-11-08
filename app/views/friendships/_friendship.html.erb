@@ -1,0 +1,14 @@
+<li class="collection-item left-align">
+	<div class="row">
+		<div class="col s6">
+			<%= friendship.requester.full_name %>
+		</div>
+		<div class="col s2">
+			<%= button_to "Confirm", accept_path(friendship_id: friendship.id), class: "btn-flat facebook-blue" %>
+		</div>
+		<div class="col s2">
+			<%= button_to "Delete Request", friendship_path(friendship.id), 
+				method: :delete, class: "btn-flat facebook-grey" %>
+		</div>
+	</div>
+</li>

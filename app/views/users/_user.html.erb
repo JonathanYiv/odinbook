@@ -4,13 +4,21 @@
 			<div class="col s8">
 				<%= user.full_name %>
 			</div>
-			<% unless current_user.request?(user) %>
-				<div class="col s4">
-					<%= button_to "Add Friend", friendships_path(user_id: current_user.id, friend_id: user.id), class: "btn-flat facebook-grey" %>
-				</div>
+			<% unless current_user.friend?(user) %>
+				<% unless current_user.request?(user) %>
+					<div class="col s4">
+						<%= button_to "Add Friend", friendships_path(user_id: current_user.id, friend_id: user.id), class: "btn-flat facebook-grey" %>
+					</div>
+				<% else %>
+					<div class="col s4">
+						<%= button_to "Cancel Request", friendship_path(current_user.request_id(user)), method: :delete, class: "btn-flat red" %>
+					</div>
+				<% end %>
 			<% else %>
 				<div class="col s4">
-					<%= button_to "Cancel Request", friendship_path(current_user.request(user)), method: :delete, class: "btn-flat red" %>
+					<%= link_to '#', class: "btn-flat facebook-grey" do %>
+						 <i class="material-icons">check</i><span>Friends</span>
+					<% end %>
 				</div>
 			<% end %>
 		</div>

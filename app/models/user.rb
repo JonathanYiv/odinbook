@@ -48,11 +48,17 @@ class User < ApplicationRecord
     requested_friends + requesting_friends
   end
 
+  # Method that returns true if the user is a friend
+  def friend?(user)
+    friends.include?(user)
+  end
+
   # Method that combines first and last name
   def full_name
     "#{first_name} #{last_name}"
   end
 
+  # Needs refactoring using associations
   # Method that returns true if the user has a friend request from you or you have a friend request from them
   def request?(user)
     requester = !!Friendship.where(accepted: false).find_by(requester_id: self.id, requested_id: user.id)
@@ -60,11 +66,22 @@ class User < ApplicationRecord
     requester || requested
   end
 
+  # Needs refactoring using associations
   # Method that returns the ID of the friendship request between two users
-  def request(user)
+  def request_id(user)
     requester = Friendship.find_by(requester_id: self.id, requested_id: user.id)
     requested = Friendship.find_by(requester_id: user.id, requested_id: self.id)
     requester ? requester.id : requested.id
+  end
+
+  # Method that returns true if the user has any friend requests
+  def has_requests
+    friendship_requests.where(accepted: false).exists?
+  end
+
+  # Method that returns all friend requests to self
+  def requests
+    friendship_requests.where(accepted: false)
   end
 
   private

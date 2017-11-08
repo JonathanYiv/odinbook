@@ -24,7 +24,7 @@
       <ul class="left">
         <li>
           <div class="row">
-            <a href="/" class="brand-logo">o</a>
+            <%= link_to "o", root_path, class: "brand-logo" %>
           </div>
         </li>     
         <li>    
@@ -47,11 +47,31 @@
         <li><%= link_to current_user.first_name, '#' %></li>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Find Friends", users_path %></li>
-        <li><i class="material-icons">people</i></li>
-        <li><i class="material-icons">message</i></li>
-        <li><i class="material-icons">notifications</i></li>
+        <li>
+          <%= link_to friendships_path do %>
+            <% if current_user.has_requests %>
+              <i class="material-icons red-text">people</i>
+            <% else %>
+              <i class="material-icons">people</i>
+            <% end %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            <i class="material-icons">message</i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            <i class="material-icons">notifications</i>
+          <% end %>
+        </li>
         <li class="grey-text">|</li>
-        <li><i class="material-icons">help</i></li>
+        <li>
+          <%= link_to '#' do %>
+            <i class="material-icons">help</i>
+          <% end %>
+        </li>
         <li>
           <a class="dropdown-button" href="#!" data-activates="dropdown1">
             <i class="material-icons right">arrow_drop_down</i>
