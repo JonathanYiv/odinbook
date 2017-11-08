@@ -2,7 +2,7 @@
 	<li class="collection-item left-align">
 		<div class="row">
 			<div class="col s8">
-				<%= user.full_name %>
+				<b><%= link_to user.full_name, user, class: "facebook-blue-text" %></b>
 			</div>
 			<% unless current_user.friend?(user) %>
 				<% unless current_user.request?(user) %>

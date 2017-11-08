@@ -1,10 +1,21 @@
 <div class="col s2">
 	<ul class="left-align">
-		<li><i class="material-icons">face</i> Jonathan Yiv</li>
+		<br>
+		<li>
+			<%= link_to current_user do %>
+				<i class="material-icons black-text">face</i>
+				<span class="black-text"> <%= current_user.full_name %></span>
+			<% end %>
+		</li>
 		<br>
 		<li class="divider"></li>
 		<br>
-		<li><i class="material-icons">format_align_justify</i> News Feed</li>
+		<li>
+			<%= link_to root_path do %>
+				<i class="material-icons black-text">format_align_justify</i>
+				<span class="black-text"> News Feed</span>
+			<% end %>
+		</li>
 		<li><i class="material-icons">message</i> Messenger</li>
 		<li><i class="material-icons">tv</i> Watch</li>
 		<br>

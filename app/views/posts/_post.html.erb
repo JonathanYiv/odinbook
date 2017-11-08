@@ -6,7 +6,9 @@
 										  data: { confirm: "Are you sure?" } %></li>
 			</ul>	
 		<% end %>
-		<span class="card-title grey-text"><%= post.user.full_name %> shared a post</span>
+		<span class="card-title grey-text">
+			<b><%= link_to post.user.full_name, post.user, class: "facebook-blue-text" %></b> shared a post
+		</span>
 		<p class="grey-text"><%= time_ago_in_words(post.created_at) %></p>
 		<br>
 		<p><%= post.content %></p>

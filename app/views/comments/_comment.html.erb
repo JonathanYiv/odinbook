@@ -6,7 +6,9 @@
 									  data: { confirm: "Are you sure?" } %></li>
 		</ul>	
 	<% end %>
-	<span class="facebook-blue-text"><b><%= comment.user.full_name %></b></span>
+	<span class="facebook-blue-text">
+		<b><%= link_to comment.user.full_name, comment.user, class: "facebook-blue-text" %></b>
+	</span>
 	<%= comment.content %>
 	<br>
 	<% if comment.likes.pluck(:user_id).include?(current_user.id) %>
