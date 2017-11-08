@@ -24,7 +24,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Use [Faker](https://github.com/stympy/faker) to seed the database.
 
 ### Features
-* Users can send Friend Requests to other Users.
+* Users can send Friend Requests to other Users. ✔
 * Users become friends when a Friend Request is accepted.
 * The Friend Request shows up as a notification in the navbar.
 * Users can create text or image Posts and upload profile pictures (using [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)).
@@ -34,7 +34,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Comments display with content, author, time, and likes. ✔
 * Logged in home page will have the 'Newsfeed.' ✔
 * User's Show page has a Profile Page with a Profile Picture.
-* User Index page lists all users and Friend Request buttons.
+* User Index page lists all users and Friend Request buttons. ✔
 
 ## Pre-Project Thoughts
 
@@ -116,7 +116,7 @@ StaticPages ✔
           If logged in, it is a timeline of all yours and your friend's posts
 
 User
-    index: Show the list of all users
+    index: Show the list of all users ✔
     show: Show the user's profile page
     edit: profile updating page
     update: Update user's details
@@ -136,8 +136,8 @@ Like ✔
 
 Friendship
     index: Shows your current friend requests.
-    create: Creates a new friend requested
-    delete: Deletes an existing friend request or friendship
+    create: Creates a new friend requested ✔
+    delete: Deletes an existing friend request or friendship ✔
 ```
 
 ## Post-Project Thoughts

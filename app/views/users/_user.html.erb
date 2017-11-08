@@ -1,10 +1,18 @@
-<li class="collection-item left-align">
-	<div class="row">
-		<div class="col s10">
-			<%= user.full_name %>
+<% unless current_user == user %>
+	<li class="collection-item left-align">
+		<div class="row">
+			<div class="col s8">
+				<%= user.full_name %>
+			</div>
+			<% unless current_user.request?(user) %>
+				<div class="col s4">
+					<%= button_to "Add Friend", friendships_path(user_id: current_user.id, friend_id: user.id), class: "btn-flat facebook-grey" %>
+				</div>
+			<% else %>
+				<div class="col s4">
+					<%= button_to "Cancel Request", friendship_path(current_user.request(user)), method: :delete, class: "btn-flat red" %>
+				</div>
+			<% end %>
 		</div>
-		<div class="col s2">
-			Add Friend
-		</div>
-	</div>
-</li>
+	</li>
+<% end %>

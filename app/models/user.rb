@@ -53,6 +53,20 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  # Method that returns true if the user has a friend request from you or you have a friend request from them
+  def request?(user)
+    requester = !!Friendship.where(accepted: false).find_by(requester_id: self.id, requested_id: user.id)
+    requested = !!Friendship.where(accepted: false).find_by(requester_id: user.id, requested_id: self.id)
+    requester || requested
+  end
+
+  # Method that returns the ID of the friendship request between two users
+  def request(user)
+    requester = Friendship.find_by(requester_id: self.id, requested_id: user.id)
+    requested = Friendship.find_by(requester_id: user.id, requested_id: self.id)
+    requester ? requester.id : requested.id
+  end
+
   private
 
     # Converts email to all lower-case
