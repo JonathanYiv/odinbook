@@ -10,11 +10,11 @@ class LikesController < ApplicationController
       @like.likeable = Comment.find(params[:comment_id])
     end
     @like.save
-    redirect_to root_path
+    redirect_back(fallback_location: root_path) 
   end
 
   def destroy
     Like.find(params[:id]).destroy
-    redirect_to root_path
+    redirect_back(fallback_location: root_path) 
   end
 end
