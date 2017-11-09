@@ -9,7 +9,10 @@
 				<div class="row"></div>
 				<div class="row"></div>
 				<div class="row">
-					<div class="col s4 offset-s2">
+					<div class="col s2">
+						<img src="<%= @user.image_url %>" style="position: absolute; bottom: 30px; border: 0.5em solid white; outline: 1px solid #d3d3d3;" height="175em" width="150em" class="hide-on-med-and-down">
+					</div>
+					<div class="col s4">
 						<span class="card-title white-text"><b><%= @user.full_name %></b></span>
 					</div>
 					<% if current_user == @user %>
@@ -17,7 +20,7 @@
 							<%= link_to "Delete Account", @user, method: :delete, 
 								data: { confirm: "Are you sure? Your account can not be recovered." },
 								class: 'btn-flat red' %>
-							<%= link_to "View Activity Log", '#', class: 'btn-flat white' %>
+							<%= link_to "View Activity Log", '#', class: 'btn-flat white hide-on-med-and-down' %>
 							<%= link_to "...", '#', class: 'btn-flat white' %>
 						</div>
 					<% else %>
