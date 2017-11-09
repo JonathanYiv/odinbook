@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:update, :destroy]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 20)
+    @users = User.where.not(id: current_user.id).paginate(page: params[:page], per_page: 20)
   end
 
   def show

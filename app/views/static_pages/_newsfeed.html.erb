@@ -1,7 +1,5 @@
 <div class="col s7">
 	<%= render 'posts/form' %>
 	<%= render @posts %>
-	<ul class="pagination">
-		<%= will_paginate @posts %>
-	</ul>
+	<%= will_paginate @posts, outer_window: 1, inner_window: 2 %>
 </div>
