@@ -12,12 +12,41 @@
 					<div class="col s4 offset-s2">
 						<span class="card-title white-text"><b><%= @user.full_name %></b></span>
 					</div>
-					<div class="col s6"> 
-						<!-- Should be different if this is current user vs a different user -->
-						<%= link_to "Update Info", '#', class: 'btn-flat white' %>
-						<%= link_to "View Activity Log", '#', class: 'btn-flat white' %>
-						<%= link_to "...", '#', class: 'btn-flat white' %>
-					</div>
+					<% if current_user == @user %>
+						<div class="col s6"> 
+							<%= link_to "Update Info", '#', class: 'btn-flat white' %>
+							<%= link_to "View Activity Log", '#', class: 'btn-flat white' %>
+							<%= link_to "...", '#', class: 'btn-flat white' %>
+						</div>
+					<% else %>
+						<% if current_user.friend?(@user) %>
+							<div class="col s2 offset-s4">
+								<%= link_to '#', class: "btn-flat white" do %>
+									 <i class="material-icons">check</i><span>Friends</span>
+								<% end %>
+							</div>
+						<% else %>
+							<% if current_user.request?(@user) %>
+								<% if current_user.unapproved_requesting_friends.include?(@user) %>
+									<div class="col s2 offset-s3">
+										<%= button_to "Accept Friend Request",
+											accept_path(friendship_id: current_user.request_id(@user)), class: "btn-flat white" %>
+									</div>
+								<% else %>
+									<div class="col s2 offset-s4">
+										<%= link_to 'Pending', '#',
+											class: "btn-flat white" %>
+									</div>
+								<% end %>
+							<% else %>
+								<div class="col s2 offset-s4">
+									<%= button_to "Add Friend",
+										friendships_path(user_id: current_user.id, friend_id: @user.id),
+										class: "btn-flat white" %>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
 				</div>
 			</div>	
             <div class="card-content">

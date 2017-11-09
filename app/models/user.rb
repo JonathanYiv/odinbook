@@ -35,6 +35,10 @@ class User < ApplicationRecord
                                  foreign_key: 'requested_id',
                                  dependent: :destroy
 
+  # Additional Association for Logic
+  has_many :unapproved_requesting_friends, through: :friendship_requests,
+                                           source: :requester
+
   # Validations
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
