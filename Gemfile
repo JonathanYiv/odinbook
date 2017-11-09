@@ -44,6 +44,9 @@ gem 'omniauth'
 # Use Faker for Database Seeding
 gem 'faker'
 
+# Add Pagination
+gem 'will_paginate', '~> 3.1.0'
+
 group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
   gem "better_errors"
