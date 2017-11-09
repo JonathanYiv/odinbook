@@ -20,7 +20,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Deployed on Heroku. ✔
 * Uses [Devise](https://github.com/plataformatec/devise) for authentication. ✔
 * Uses [Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview) to allow sign-in with Facebook.
-* Mailer sends a welcome email after signup using [SendGrid](https://sendgrid.com).
+* Mailer sends a welcome email after signup using [SendGrid](https://sendgrid.com). ✔
 * Use [Faker](https://github.com/stympy/faker) to seed the database.
 
 ### Features
