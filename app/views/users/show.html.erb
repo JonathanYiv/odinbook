@@ -81,11 +81,10 @@
 					<% elsif @user.bio.blank? && current_user == @user %>
 						<!-- Shows the add bio form if it doesn't exist and this is your profile page -->
 						<br>
-						<span class="card-title">
-							<i class="material-icons facebook-blue-text">assessment</i>
-							Bio
-						</span>
-						<%= render 'bio_form' %>
+						<div class="card-content">
+							<span class="card-title">Bio</span>
+							<%= render 'bio_form' %>
+						</div>
 					<% elsif !@user.bio.blank? && current_user == @user %>
 						<!-- Shows the add bio form and the bio if the bio exists and this is your profile page -->
 						<%= render "bio" %>
