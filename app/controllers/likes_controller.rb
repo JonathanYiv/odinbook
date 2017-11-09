@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :logged_in_user
+  # Incorrect users can create and destroy likes.
 
   def create
     @like = Like.new

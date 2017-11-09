@@ -1,5 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :logged_in_user
+  # Incorrect users can create, destroy, and accept friendships.
 
   def index
   end

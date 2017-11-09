@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
   before_action :logged_in_user
+  # Incorrect users can destroy other user's comments.
   
   def create
     @comment = current_user.comments.new(post_params)
     if @comment.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       flash.now[:info] = "Your comment is too long."
       render 'static_pages#home'
@@ -13,7 +14,7 @@ class CommentsController < ApplicationController
 
   def destroy
     Comment.find(params[:id]).destroy
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
