@@ -37,8 +37,10 @@ recent_users = users.order(created_at: :desc).take(10)
 # Creates 10 Posts for each of these users
 recent_users.each do |user|
   10.times do
-    content = Faker::Lorem.sentences(2).join(" ")
-    user.posts.create!(content: content)
+    content     = Faker::Lorem.sentences(2).join(" ")
+    created_at  = Faker::Time.between(1.year.ago, Date.today, :all)
+    user.posts.create!(content:    content,
+                       created_at: created_at)
   end
 end
 
@@ -48,8 +50,10 @@ other_users = users.order(created_at: :asc).take(40)
 # Creates 5 Posts for the remaining users
 other_users.each do |user|
   5.times do
-    content = Faker::Lorem.sentences(2).join(" ")
-    user.posts.create!(content: content)
+    content     = Faker::Lorem.sentences(2).join(" ")
+    created_at  = Faker::Time.between(1.year.ago, Date.today, :all)
+    user.posts.create!(content:     content,
+                       created_at:  created_at)
   end
 end
 
