@@ -41,6 +41,9 @@ gem 'webpacker', '~> 3.0'
 gem 'devise'
 gem 'omniauth'
 
+# Use Faker for Database Seeding
+gem 'faker'
+
 group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
   gem "better_errors"
