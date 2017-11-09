@@ -11,8 +11,11 @@
 		</span>
 		<p class="grey-text"><%= time_ago_in_words(post.created_at) %></p>
 		<br>
+		<div class="card-image">
+			<img src="<%= post.image_url %>">
+		</div>
+		<br>
 		<p><%= post.content %></p>
-
 	</div>
 	<div class="card-action">
 		<% if post.likes.pluck(:user_id).include?(current_user.id) %>

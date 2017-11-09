@@ -27,7 +27,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Users can send Friend Requests to other Users. ✔
 * Users become friends when a Friend Request is accepted. ✔
 * The Friend Request shows up as a notification in the navbar. ✔
-* Users can create text or image Posts and upload profile pictures (using [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)).
+* Users can create text or image Posts and upload profile pictures (using [Shrine](https://github.com/janko-m/shrine)).
 * Users can like Posts. ✔
 * Users can comment on Posts. ✔
 * Posts display with content, author, time, comments, and likes. ✔

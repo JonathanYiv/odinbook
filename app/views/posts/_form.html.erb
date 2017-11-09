@@ -6,12 +6,16 @@
 			<div class="divider"></div>
 			<div class="input-field">
 				<%= f.text_area :content, placeholder: "What's on your mind, #{current_user.first_name}?", class: "materialize-textarea" %>
+				<%= f.hidden_field :image, value: Post.new.cached_image_data %>
+				<%= f.file_field :image, class: "btn white file" %>
 			</div>
 		</div>
 		<div class="card-content">
-			<ul class="right">
-	  			<li><%= f.submit "Post", class: "btn facebook-blue white-text" %></li>
-	  		</ul>
+	  		<div class="row">
+	  			<div class="col s2 offset-s10" style="margin-top: -20px;">
+	  				<%= f.submit "Post", class: "btn facebook-blue white-text" %>
+	  			</div>
+	  		</div>
 	  	</div>
 	<% end %>
 </div>

@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  # For Image Uploading
+  include ImageUploader[:image]
+
   # Default Scope
   default_scope { order(created_at: :desc) }
 
