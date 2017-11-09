@@ -5,3 +5,9 @@
 $(document).ready ->
   $('.dropdown-button').dropdown({constrainWidth: false })
   return
+
+$(document).ready ->
+  $('.target').pushpin
+    top: 0
+    offset: 0
+  return
