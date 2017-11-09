@@ -10,10 +10,11 @@ class UsersController < ApplicationController
     @posts = @user.posts
   end
 
-  def edit
-  end
-
   def update
+    @user = User.find(params[:id])
+    @user.update_attribute(:bio, params[:user][:bio])
+    flash[:success] = "Profile updated."
+    redirect_back(fallback_location: @user)
   end
 
   def destroy

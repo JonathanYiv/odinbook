@@ -117,9 +117,8 @@ StaticPages ✔
 
 User
     index: Show the list of all users ✔
-    show: Show the user's profile page
-    edit: profile updating page
-    update: Update user's details
+    show: Show the user's profile page ✔
+    update: Update user's details ✔
     destroy: Delete a user
 
 Post ✔

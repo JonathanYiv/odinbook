@@ -1,0 +1,12 @@
+<%= form_for(@user, url: user_path(@user)) do |f| %>
+	<div class="card-content">
+		<div class="input-field">
+			<%= f.text_area :bio, placeholder: "Tell us about yourself!", class: "materialize-textarea" %>
+		</div>
+		<div class="row" style="margin-bottom: 0px;">
+			<div class="col s1 offset-s7">
+				<%= f.submit "Save", class: "btn facebook-blue white-text" %>
+			</div>
+		</div>
+	</div>
+<% end %>
