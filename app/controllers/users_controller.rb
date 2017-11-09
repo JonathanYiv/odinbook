@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update_attribute(:bio, params[:user][:bio])
+    @user.update_attributes(user_params)
     flash[:success] = "Profile updated."
     redirect_back(fallback_location: @user)
   end
@@ -32,5 +32,14 @@ class UsersController < ApplicationController
         flash[:warning] = "You are not authorized to do that."
         redirect_to root_path
       end
+    end
+
+    # Strong Parameters method
+    def user_params
+      params.require(:user).permit(:bio)
+    end
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
     end
 end
