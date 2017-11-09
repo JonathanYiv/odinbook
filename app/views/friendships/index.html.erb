@@ -1,10 +1,15 @@
+<% provide(:title, "Friend Requests") %>
+
 <div class="row">
 	<%= render 'static_pages/left_sidebar' %>
 	<div class="col s7">
 		<% unless current_user.requests.empty? %>
-			<ul class="collection">
-				<%= render current_user.requests %>
-			</ul>
+			<div class="card">
+				<h3>Friend Requests</h3>
+				<ul class="collection">
+					<%= render current_user.requests %>
+				</ul>
+			</div>
 		<% else %>
 			<p>You currently have no pending friend requests.</p>
 		<% end %>

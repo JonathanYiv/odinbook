@@ -33,7 +33,7 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 * Posts display with content, author, time, comments, and likes. ✔
 * Comments display with content, author, time, and likes. ✔
 * Logged in home page will have the 'Newsfeed.' ✔
-* User's Show page has a Profile Page with a Profile Picture.
+* User's Show page has a Profile Page. ✔
 * User Index page lists all users and Friend Request buttons. ✔
 
 ## Pre-Project Thoughts
@@ -119,7 +119,7 @@ User
     index: Show the list of all users ✔
     show: Show the user's profile page ✔
     update: Update user's details ✔
-    destroy: Delete a user
+    destroy: Delete a user ✔
 
 Post ✔
     create: creates a new post ✔

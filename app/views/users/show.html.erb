@@ -124,7 +124,7 @@
 				<p class="grey-text left-align">Jonathan © 2017</p>
 			</div>
 			<div class="col s8">
-				<%= render 'posts/form' %>
+				<%= render 'posts/form' if current_user == @user %>
 				<%= render @posts %>
 			</div>
 		</div>
