@@ -67,25 +67,7 @@ class User < ApplicationRecord
   # Method that returns true if the user has a friend request from you 
   # or you have a friend request from them that is unaccepted
   def request?(user)
-    
-
-    # Attempt 1 at Fixing N + 1
-    # requester = !!Friendship.include(:requester, :requested).where(accepted: false).find_by(requester_id: self.id, requested_id: user.id)
-    # requested = !!Friendship.include(:requester, :requested).where(accepted: false).find_by(requester_id: user.id, requested_id: self.id)
-    
-    # Current Code
-    # requester = !!Friendship.where(accepted: false).find_by(requester_id: self.id, requested_id: user.id)
-    # requested = !!Friendship.where(accepted: false).find_by(requester_id: user.id, requested_id: self.id)
-    
-    # Attempt 2
-    # friendships = Friendship.where(accepted: false).include(:requester, :requested)
-    # requester = !!friendships.find_by(requester_id: self.id, requested_id: user.id)
-    # requested = !!friendships.find_by(requester_id: user.id, requested_id: self.id)
-
-    # Attempt 3
     unapproved_requested_friends.pluck(:id).include?(user.id) || unapproved_requesting_friends.pluck(:id).include?(user.id)
-
-    #requester || requested
   end
 
   # Needs refactoring using associations
