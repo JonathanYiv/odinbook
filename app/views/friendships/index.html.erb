@@ -7,7 +7,7 @@
 			<div class="card">
 				<h3>Friend Requests</h3>
 				<ul class="collection">
-					<%= render current_user.requests %>
+					<%= render current_user.requests.includes(:requester) %>
 				</ul>
 			</div>
 		<% else %>

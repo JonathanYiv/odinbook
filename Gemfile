@@ -51,6 +51,8 @@ group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
   gem "better_errors"
   gem "binding_of_caller"
+  # Use the Bullet gem to track N + 1 queries
+  gem "bullet"
 end
 
 group :development, :test do
