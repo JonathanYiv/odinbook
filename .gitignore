@@ -21,3 +21,5 @@
 /public/packs-test
 /node_modules
 /public/uploads
+# Ignore application configuration
+/config/application.yml

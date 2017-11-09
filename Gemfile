@@ -47,8 +47,10 @@ gem 'faker'
 # Add Pagination
 gem 'will_paginate', '~> 3.1.0'
 
-# Use Shrine for image uploading
+# Use Shrine for image uploading, Figaro for environment variables,  and AWS S3 Bucket for image storage
 gem 'shrine'
+gem "aws-sdk-s3", "~> 1.2"
+gem "figaro"
 
 group :development do
   # Use the Better Errors gem to enhance the standard Rails error page
