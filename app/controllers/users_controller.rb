@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
     # Strong Parameters method
     def user_params
-      params.require(:user).permit(:bio)
+      params.require(:user).permit(:bio, :image)
     end
 
     def update_resource(resource, params)
