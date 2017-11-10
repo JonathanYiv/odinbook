@@ -39,6 +39,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:bio, :image)
     end
 
+    # Where does this override update_resources? Is this a security issue?
     def update_resource(resource, params)
       resource.update_without_password(params)
     end
