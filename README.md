@@ -145,4 +145,8 @@ Friendship ✔
 
 ## Post-Project Thoughts
 
-...
+1. Woo boy. That project took me a week. That was a long project.
+
+2. I feel like I have levelled up in so many respects. Using gems, reading their documentation, integrating them into my Rails application, reading other guides/SO questions on particular reasons why it might not work, adding factories, writing cleaner code (still not great yet, more like a little less than good, but way better than before), deployment into the production environment with a bunch of configuration thingies. I just feel more powerful.
+
+3. Not full test coverage yet. No integration tests. But this is the most test coverage I have ever done. I am starting to understand what to/what not to test. Onwards.
