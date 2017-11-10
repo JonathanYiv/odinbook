@@ -52,14 +52,6 @@ gem 'shrine'
 gem "aws-sdk-s3", "~> 1.2"
 gem "figaro"
 
-group :development do
-  # Use the Better Errors gem to enhance the standard Rails error page
-  gem "better_errors"
-  gem "binding_of_caller"
-  # Use the Bullet gem to track N + 1 queries
-  gem "bullet"
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -76,6 +68,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Use the Better Errors gem to enhance the standard Rails error page
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Use the Bullet gem to track N + 1 queries
+  gem "bullet"
+end
+
+group :test do
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
