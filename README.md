@@ -4,7 +4,7 @@ The goal of this project is to implement Facebook -- without chat and AJAX -- in
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project).
 
-[Future Screenshot]
+[![Odinbook](/odinbook.png)](https://www.youtube.com/watch?v=CHI4sY1OLcw)
 
 ### Requirements
 
