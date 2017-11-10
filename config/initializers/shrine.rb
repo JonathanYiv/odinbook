@@ -17,3 +17,7 @@ Shrine.storages = {
 Shrine.plugin :activerecord
 Shrine.plugin :cached_attachment_data # for forms
 Shrine.plugin :rack_file # for non-Rails apps
+
+# Adds validation helpers
+Shrine.plugin :validation_helpers
+Shrine.plugin :determine_mime_type
