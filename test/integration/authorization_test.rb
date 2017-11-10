@@ -37,10 +37,9 @@ class AuthorizationTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
 
     # Signed In User
-    # sign_in @user
-    # get user_path(1) # Seed the Test Database?
-    # assert_redirected_to root_path
-    # assert_not flash.empty?
+    sign_in @user
+    get user_path(User.last.id)
+    assert_not flash.empty?
   end
 
   # Need tests for every route

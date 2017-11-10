@@ -39,8 +39,9 @@ class CommentTest < ActiveSupport::TestCase
   # Test Comment/Like dependent destruction
   test "destroying comment destroys associated likes" do
     @comment.save
-    create(:like, likeable: @comment)
-    assert_equal Like.count, 1
+    assert_difference 'Like.count', 1 do
+      create(:like, likeable: @comment)
+    end
     assert_difference 'Like.count', -1 do
       @comment.destroy
     end

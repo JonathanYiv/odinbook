@@ -38,8 +38,9 @@ class PostTest < ActiveSupport::TestCase
   # Test Post/Like and Post/Comment dependent destruction
   test "destroying post destroys associated likes" do
     @post.save
-    create(:like, likeable: @post)
-    assert_equal Like.count, 1
+    assert_difference 'Like.count', 1 do
+      create(:like, likeable: @post)
+    end
     assert_difference 'Like.count', -1 do
       @post.destroy
     end
@@ -47,8 +48,9 @@ class PostTest < ActiveSupport::TestCase
 
   test "destroying post destroys associated comments" do
     @post.save
-    create(:comment, post: @post)
-    assert_equal Comment.count, 1
+    assert_difference 'Comment.count', 1 do
+      create(:comment, post: @post)
+    end
     assert_difference 'Comment.count', -1 do
       @post.destroy
     end

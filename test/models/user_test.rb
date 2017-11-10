@@ -107,8 +107,9 @@ class UserTest < ActiveSupport::TestCase
   # Test User/Post, User/Like, User/Comment, and User/Friendship dependent destruction
   test "destroying user destroys associated posts" do
     @user.save
-    create(:post, user: @user)
-    assert_equal Post.count, 1
+    assert_difference 'Post.count', 1 do
+      create(:post, user: @user)
+    end
     assert_difference 'Post.count', -1 do
       @user.destroy
     end
@@ -116,8 +117,9 @@ class UserTest < ActiveSupport::TestCase
 
   test "destroying user destroys associated likes" do
     @user.save
-    create(:like, user: @user)
-    assert_equal Like.count, 1
+    assert_difference 'Like.count', 1 do
+      create(:like, user: @user)
+    end
     assert_difference 'Like.count', -1 do
       @user.destroy
     end
@@ -125,8 +127,9 @@ class UserTest < ActiveSupport::TestCase
 
   test "destroying user destroys associated comments" do
     @user.save
-    create(:comment, user: @user)
-    assert_equal Comment.count, 1
+    assert_difference 'Comment.count', 1 do
+      create(:comment, user: @user)
+    end
     assert_difference 'Comment.count', -1 do
       @user.destroy
     end
@@ -134,9 +137,10 @@ class UserTest < ActiveSupport::TestCase
 
   test "destroying user destroys associated friendship requests" do
     @user.save
-    create(:friendship, requester: @user)
-    create(:friendship, requested: @user)
-    assert_equal Friendship.count, 2
+    assert_difference 'Friendship.count', 2 do
+      create(:friendship, requester: @user)
+      create(:friendship, requested: @user)
+    end
     assert_difference 'Friendship.count', -2 do
       @user.destroy
     end
@@ -144,9 +148,10 @@ class UserTest < ActiveSupport::TestCase
 
   test "destroying user destroys associated friendships" do
     @user.save
-    create(:friendship, requester: @user, accepted: true)
-    create(:friendship, requested: @user, accepted: true)
-    assert_equal Friendship.where(accepted: true).count, 2
+    assert_difference 'Friendship.where(accepted: true).count', 2 do
+      create(:friendship, requester: @user, accepted: true)
+      create(:friendship, requested: @user, accepted: true)
+    end
     assert_difference 'Friendship.where(accepted: true).count', -2 do
       @user.destroy
     end
