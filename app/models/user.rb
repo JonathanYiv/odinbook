@@ -4,8 +4,11 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, and :timeoutable
-  devise :database_authenticatable, :omniauthable, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # Add Omniauth Support for Facebook
+  devise :omniauthable, omniauth_providers: [:facebook]
 
   # Filters
   before_save :downcase_email
@@ -89,6 +92,17 @@ class User < ApplicationRecord
   # Method that returns all friend requests to self
   def requests
     friendship_requests.where(accepted: false)
+  end
+
+  # Omniauth Method
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      #debugger
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.first_name = auth.info.name.to_s.split[0]
+      user.last_name = auth.info.name.to_s.split[1]
+    end
   end
 
   private

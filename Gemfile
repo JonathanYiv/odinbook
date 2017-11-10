@@ -39,7 +39,7 @@ gem 'webpacker', '~> 3.0'
 
 # Use Devise for Authentication
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use Faker for Database Seeding
 gem 'faker'
