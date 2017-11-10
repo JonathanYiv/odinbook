@@ -1,5 +1,13 @@
 # Odinbook Project
 
+This is [Odinbook](https://serene-coast-95388.herokuapp.com/).
+
+Using this login will allow you to see the site with a seeded database.
+```
+username: JonathanYiv@gmail.com
+password: password
+```
+
 The goal of this project is to implement Facebook -- without chat and AJAX -- in Rails.
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project).
