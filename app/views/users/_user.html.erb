@@ -7,7 +7,7 @@
 			<% unless current_user.friend?(user) %>
 				<% unless current_user.request?(user) %>
 					<div class="col s4">
-						<%= button_to "Add Friend", friendships_path(user_id: current_user.id, friend_id: user.id), class: "btn-flat facebook-grey" %>
+						<%= button_to "Add Friend", friendships_path(friend_id: user.id), class: "btn-flat facebook-grey" %>
 					</div>
 				<% else %>
 					<div class="col s4">

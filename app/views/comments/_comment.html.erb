@@ -16,7 +16,7 @@
 			<span class="facebook-blue-text">Like</span>
 		<% end %> 
 	<% else %>
-		<%= link_to likes_path(user_id: current_user.id, comment_id: comment.id), method: :post do %>
+		<%= link_to likes_path(comment_id: comment.id), method: :post do %>
 			<span class="grey-text">Like</span>
 		<% end %>
 	<% end %>

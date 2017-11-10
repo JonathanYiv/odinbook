@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :logged_in_user
-  # Incorrect users can destroy other user's comments.
+  before_action :correct_user, only: :destroy
   
   def create
     @comment = current_user.comments.new(post_params)
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    Comment.find(params[:id]).destroy
+    @comment.destroy
     redirect_back(fallback_location: root_path)
   end
 
@@ -21,5 +21,14 @@ class CommentsController < ApplicationController
 
     def post_params
       params.require(:comment).permit(:content, :post_id)
+    end
+
+    # Only the commenter can delete their comment
+    def correct_user
+      @comment = Comment.find(params[:id])
+      unless current_user == @comment.user
+        flash[:warning] = "You are not authorized to do that."
+        redirect_back(fallback_location: root_path)
+      end
     end
 end

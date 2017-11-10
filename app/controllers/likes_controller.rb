@@ -1,10 +1,10 @@
 class LikesController < ApplicationController
   before_action :logged_in_user
-  # Incorrect users can create and destroy likes.
+  before_action :correct_user, only: :destroy
 
   def create
     @like = Like.new
-    @like.user = User.find(params[:user_id])
+    @like.user = current_user
     if params[:post_id]
       @like.likeable = Post.find(params[:post_id])
     else
@@ -15,7 +15,18 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    Like.find(params[:id]).destroy
+    @like.destroy
     redirect_back(fallback_location: root_path) 
   end
+
+  private
+
+    # Only the liker can unlike
+    def correct_user
+      @like = Like.find(params[:id])
+      unless current_user == @like.user
+        flash[:warning] = "You are not authorized."
+        redirect_back(fallback_location: root_path)
+      end
+    end
 end
