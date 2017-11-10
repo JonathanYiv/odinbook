@@ -96,12 +96,14 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
 
     # Valid Friend Request - Requested
-    # sign_in @nonfriend
-    # assert_difference 'Friendship.where(accepted: true).count', 1 do
-    #   post accept_path, params: { id: @friend_request.id }
-    # end
-    # assert_not flash.empty?
-    # assert_redirected_to @friend_request.requester
     skip("This is having some issues..")
+    # assert_not @nonfriend.friend?(@user)
+    # Friendship.find(@friend_request.id).update_attribute(:accepted, true)
+    # sign_in @nonfriend.reload
+    # post accept_path, params: { friendship_id: @friend_request.id }
+    # assert_not flash.empty?
+    # assert @nonfriend.reload.friend?(@user)
   end 
 end
+
+

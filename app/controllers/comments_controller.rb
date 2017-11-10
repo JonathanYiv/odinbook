@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: :destroy
   
   def create
-    @comment = current_user.comments.new(post_params)
+    @comment = current_user.comments.new(comment_params)
     if @comment.save
       redirect_back(fallback_location: root_path)
     else
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   private
 
-    def post_params
+    def comment_params
       params.require(:comment).permit(:content, :post_id)
     end
 
