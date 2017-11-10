@@ -6,6 +6,8 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 
 Click the image below for a video demonstration of the features.
 
+**Note:** This is created for a 2560x1440 screen. I have not developed strong responsive design skills yet, and viewing in a smaller screen may cause some UI issues.
+
 [![Odinbook](/odinbook.png)](https://www.youtube.com/watch?v=CHI4sY1OLcw)
 
 ### Requirements
