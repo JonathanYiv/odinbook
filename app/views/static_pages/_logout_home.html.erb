@@ -16,7 +16,8 @@
 			<p><i class="material-icons">chrome_reader_mode</i> <b>See photos and updates</b> from friends in News Feed.</p>
 			<p><i class="material-icons">accessibility</i> <b>Share what's new in your life</b> on your Timeline.</p>
 			<p><i class="material-icons">important_devices</i> <b>Find more</b> of what you're looking for with Facebook Search.</p>
-			<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+			<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, 
+				class: "btn-flat facebook-blue white-text" %>
 		</div>
 		<div class="col s6">
 			<%= render 'devise/registrations/new' %>
