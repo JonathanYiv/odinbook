@@ -28,7 +28,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     # Logged In User and Incorrect Comment
     sign_in @user
     assert_difference 'Comment.count', 0 do
-      delete comment_path(Comment.first)
+      delete comment_path(Comment.last)
     end
     assert_not flash.empty?
     assert_redirected_to root_path
