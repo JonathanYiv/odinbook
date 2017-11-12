@@ -2,9 +2,9 @@
 	<div class="card-content">
 		<% if current_user == post.user %>
 			<ul class="right">
-				<li class="blue-text"><%= link_to "Delete", post, method: :delete, 
+				<li class="blue-text"><%= link_to "Delete", post, method: :delete,
 										  data: { confirm: "Are you sure?" } %></li>
-			</ul>	
+			</ul>
 		<% end %>
 		<span class="card-title grey-text">
 			<b><%= link_to post.user.full_name, post.user, class: "facebook-blue-text" %></b> shared a post
@@ -15,7 +15,7 @@
 			<img src="<%= post.image_url %>">
 		</div>
 		<br>
-		<p><%= post.content %></p>
+		<p><%= simple_format post.content %></p>
 	</div>
 	<div class="card-action">
 		<% if post.likes.pluck(:user_id).include?(current_user.id) %>
